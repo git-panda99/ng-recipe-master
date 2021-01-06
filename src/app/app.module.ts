@@ -8,6 +8,9 @@ import { RecipesListComponent } from './recipes-list/recipes-list.component';
 import { RecipesListService } from './recipes-list/recipes-list.service';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [RecipesListService],
   bootstrap: [AppComponent]
