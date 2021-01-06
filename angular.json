@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "recipe-master"
+  "defaultProject": "recipe-master",
+  "cli": {
+    "analytics": "4086ffd8-ec60-4c20-b564-018afb71b367"
+  }
 }

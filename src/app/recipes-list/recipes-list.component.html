@@ -1,0 +1,8 @@
+<h1>My recipes list:</h1>
+
+<form (ngSubmit)="onAddRecipe(f)" #f="ngForm">
+    <input type="text" ngModel name="recipeTitle" required>
+    <button type="submit">Add Recipe</button>
+</form>
+
+<app-recipe (recipeClicked)="onRemoveRecipe(recipe)" *ngFor="let recipe of recipes" [recipeTitle]="recipe"></app-recipe>
