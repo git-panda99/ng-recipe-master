@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { RecipesListService } from '../recipes-list/recipes-list.service';
+import { AllRecipesService } from './all-recipes/all-recipes.service';
 
 @Component({
   selector: 'app-recipe',
@@ -10,7 +10,7 @@ export class RecipeComponent implements OnInit {
   @Input() recipeTitle: string; //receive data fromt the outside
   @Output() recipeClicked = new EventEmitter(); //pass data to the outside
 
-  constructor(private recipesListService: RecipesListService) { }
+  constructor(private recipesListService: AllRecipesService) { }
 
   ngOnInit(): void {
   }
