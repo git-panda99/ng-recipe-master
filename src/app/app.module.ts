@@ -18,6 +18,9 @@ import { AllRecipesService } from './recipes/all-recipes/all-recipes.service';
 import { RecipeComponent } from './recipes/recipe/recipe.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { AuthService } from './auth/auth.service';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -40,7 +43,9 @@ import { AuthService } from './auth/auth.service';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [AllRecipesService, AuthService],
   bootstrap: [AppComponent]

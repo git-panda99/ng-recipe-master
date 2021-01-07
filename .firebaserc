@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "recipe-master-panda": {
+      "hosting": {
+        "recipe-master": [
+          "recipe-master-panda"
+        ]
+      }
+    }
+  }
+}

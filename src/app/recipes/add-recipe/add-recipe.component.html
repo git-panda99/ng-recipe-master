@@ -43,14 +43,8 @@
       <!-- categories -->
       <mat-form-field>
         <mat-select placeholder="Categories" multiple>
-          <mat-option value="1">
-            1
-          </mat-option>
-          <mat-option value="2">
-            2
-          </mat-option>
-          <mat-option value="3">
-            3
+          <mat-option *ngFor="let cat of categories | async" [value]="cat.id">
+            {{ cat.name }}
           </mat-option>
         </mat-select>
       </mat-form-field>
