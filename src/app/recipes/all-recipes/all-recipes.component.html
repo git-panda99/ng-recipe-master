@@ -1,8 +1,10 @@
-<h1>My recipes list:</h1>
+<h1 fxLayoutAlign="center center">My recipes list:</h1>
 
-<form (ngSubmit)="onAddRecipe(f)" #f="ngForm">
+<form (ngSubmit)="onAddRecipe(f)" #f="ngForm" fxLayoutAlign="center center">
     <input type="text" ngModel name="recipeTitle" required>
     <button mat-raised-button color="primary" type="submit">Add Recipe</button>
 </form>
 
-<app-recipe (recipeClicked)="onRemoveRecipe(recipe)" *ngFor="let recipe of recipes" [recipeTitle]="recipe"></app-recipe>
+<div class="all-recipes" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
+    <app-recipe (recipeClicked)="onRemoveRecipe(recipe)" *ngFor="let recipe of recipes" [recipeTitle]="recipe"></app-recipe>
+</div>

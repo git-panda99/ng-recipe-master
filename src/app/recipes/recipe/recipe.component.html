@@ -2,7 +2,12 @@
 <input type="text" [(ngModel)]="recipeTitleInput">
 <button (click)="recipeTitle=recipeTitleInput">Change Title</button>-->
 
-<article class="recipe" (click)="onClicked()">
-    <p>{{ recipeTitle }}</p>
-    <p>The most awesome recipe</p>
-</article>
+<section class="recipe" (click)="onClicked()" fxLayout fxLayoutAlign="center">
+    <mat-card fxFlex.xs="100%" fxFlex="400px">
+      <mat-card-title fxLayoutAlign="center">{{ recipeTitle }}</mat-card-title>
+      <mat-card-content fxLayoutAlign="center">
+        <p>The most awesome recipe</p>
+      </mat-card-content>
+    </mat-card>
+</section>
+  

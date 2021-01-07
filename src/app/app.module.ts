@@ -16,6 +16,7 @@ import { AddRecipeComponent } from './recipes/add-recipe/add-recipe.component';
 import { AllRecipesComponent } from './recipes/all-recipes/all-recipes.component';
 import { AllRecipesService } from './recipes/all-recipes/all-recipes.service';
 import { RecipeComponent } from './recipes/recipe/recipe.component';
+import { RecipesComponent } from './recipes/recipes.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { RecipeComponent } from './recipes/recipe/recipe.component';
     HeaderComponent,
     SidenavListComponent,
     AddRecipeComponent,
-    AllRecipesComponent
+    AllRecipesComponent,
+    RecipesComponent
   ],
   imports: [
     BrowserModule,
