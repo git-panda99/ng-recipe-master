@@ -17,6 +17,7 @@ import { AllRecipesComponent } from './recipes/all-recipes/all-recipes.component
 import { AllRecipesService } from './recipes/all-recipes/all-recipes.service';
 import { RecipeComponent } from './recipes/recipe/recipe.component';
 import { RecipesComponent } from './recipes/recipes.component';
+import { AuthService } from './auth/auth.service';
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import { RecipesComponent } from './recipes/recipes.component';
     FlexLayoutModule,
     ReactiveFormsModule
   ],
-  providers: [AllRecipesService],
+  providers: [AllRecipesService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
