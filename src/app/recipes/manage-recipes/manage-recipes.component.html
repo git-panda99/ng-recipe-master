@@ -1,0 +1,86 @@
+<div class="container">
+
+  <mat-card class="add-recipe" fxLayout="column" fxLayoutAlign="center center" width="60%">
+    <mat-card-header>
+      <mat-card-title fxLayoutAlign="center">Share your Recipe!</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+    <form class="add-form" fxLayout="column" fxFlexFill fxLayout.lt-sm="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  
+        <!-- title -->
+        <span fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="15px">
+        <mat-form-field fxLayoutAlign="center">
+          <input type="text" matInput placeholder="Recipe Title" [(ngModel)]="recipeTitle" name="title" required>
+          <!--<mat-error *ngIf="recipeTitle.hasError('required')">Field must not be empty.</mat-error>-->
+        </mat-form-field>
+  
+        <!-- image -->
+        <mat-form-field>
+          <mat-label>Add a image of your recipe</mat-label>
+          <ngx-mat-file-input placeholder="" accept=".png,.jpg" (change)="uploadFile($event)" name="image">
+          </ngx-mat-file-input>
+          <mat-icon matSuffix>folder</mat-icon>
+          <div>{{ uploadPercent | async }}</div>
+          <img [src]="downloadURL | async" width="100px" height="auto">
+        </mat-form-field>
+        </span>
+  
+  
+  
+        <span fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="15px">
+        <!-- categories -->
+        <mat-form-field>
+          <mat-select placeholder="Categories" multiple [(ngModel)]="recipeCategories" required name="categories">
+            <mat-option *ngFor="let cat of categories | async" [value]="cat.id">
+              {{ cat.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <!-- dificulty -->
+          <mat-form-field>
+            <mat-select placeholder="Dificulty" [(ngModel)]="recipeDificulty" name="dificulty">
+              <mat-option value=0>
+                Easy
+              </mat-option>
+              <mat-option value=1>
+                Medium
+              </mat-option>
+              <mat-option value=2>
+                Hard
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </span>
+        
+        
+        <!--<span fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="15px">-->
+        <!-- preparation time -->
+        <!--  <mat-form-field fxLayoutAlign="center">
+            <input type="time" class="without_ampm" matInput placeholder="Recipe Preparation Time (h:m)" name="prepTime">
+          </mat-form-field>-->
+  
+        <!-- cooking time -->
+        <!--<mat-form-field fxLayoutAlign="center">
+          <input type="time" class="without_ampm" matInput placeholder="Recipe Cooking Time (h:m)" ngModel name="time">
+        </mat-form-field>
+        </span>-->
+  
+        <!-- description -->
+        <mat-form-field class="full-width-field" fxLayoutAlign="center">
+          <mat-label>Recipe Description</mat-label>
+          <textarea type="textarea" matInput ngModel name="Description" required [(ngModel)]="recipeDescription"></textarea>
+        </mat-form-field>
+  
+        <!-- steps -->
+        <mat-form-field class="full-width-field" fxLayoutAlign="center">
+          <mat-label>Recipe Steps</mat-label>
+          <textarea type="textarea" matInput ngModel name="Steps" required [(ngModel)]="recipeSteps" name="dificulty"></textarea>
+        </mat-form-field>
+  
+        <button type="submit" (click)="CreateRecord()" [disabled]="!recipeTitle || !recipeDescription || !recipeSteps" mat-raised-button color="primary" >Create</button>
+    </form>
+    </mat-card-content>
+  </mat-card>
+    

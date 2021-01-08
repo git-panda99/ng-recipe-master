@@ -13,6 +13,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatListModule,
     MatTabsModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    MaterialFileInputModule,
+    MatProgressBarModule
   ],
   exports: [
     MatButtonModule,
@@ -46,7 +50,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatListModule,
     MatTabsModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    MaterialFileInputModule,
+    MatProgressBarModule 
   ]
 })
 export class MaterialModule { }
