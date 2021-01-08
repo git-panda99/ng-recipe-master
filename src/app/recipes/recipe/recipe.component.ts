@@ -11,25 +11,18 @@ import { Dificulty } from '../includes/dificulty.enum';
 
 
 export class RecipeComponent implements OnInit {
-  @Input() recipeTitle: string; //receive data fromt the outside
-  recipeDescription: string;
-  recipeImage: string;
-  recipeIngredients: Array<[string, string, number]>; //Igredient name, metric and quantity
-  recipeTimePrep: Time;
-  recipeTimeCook: Time;
-  recipeDificulty: Dificulty;
-  recipeCategories: Array<string>;
-  recipeSteps: Array<string>;
-
+  @Input() recipeItem; //receive data fromt the outside
   @Output() recipeClicked = new EventEmitter(); //pass data to the outside
 
-  constructor(private recipesListService: AllRecipesService) { }
+  constructor(private recipesListService: AllRecipesService) {
+  }
 
   ngOnInit(): void {
+    console.log('Aici');
   }
 
   onClicked() {
-    this.recipesListService.deleteRecipe(this.recipeTitle);
+    this.recipesListService.deleteRecipe(this.recipeItem);
   }
 
 }

@@ -3,14 +3,16 @@ import { CommonModule, Time } from '@angular/common';
 import { Dificulty } from './dificulty.enum';
 
 export interface RecipeModule { 
-  title: string; //receive data fromt the outside
+  id: string;
+  isEdit: boolean;
+  title: string;
   description: string;
   image: string;
-  ingredients: Array<[string, string, number]>; //Igredient name, metric and quantity
-  timePrep: Time;
-  timeCook: Time;
-  dificulty: Dificulty;
-  categories: Array<string>;
+  ingredients: any;
+  timePrep: any;
+  timeCook: any;
+  dificulty: any;
+  categories: any;
   steps: string;
-  date: Date;
+  
 }

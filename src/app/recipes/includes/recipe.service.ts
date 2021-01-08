@@ -5,6 +5,7 @@ import { CategoryModule } from './category.module';
 import { map } from 'rxjs/operators';
 
 import * as firebase from 'firebase';
+import { RecipeModule } from './recipe.module';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,16 @@ export class RecipeService {
   }
 
   read_Recipe() {
-    return this.firestore.collection('recipes').snapshotChanges();
+    return this.firestore.collection<RecipeModule>('recipes').snapshotChanges()
+    .pipe(
+      map((docArray) => {
+        return docArray.map((doc) => {
+          return {
+            id: doc.payload.doc.id,
+            ...(doc.payload.doc.data() as RecipeModule),
+          };
+        });
+      }));
   }
 
   read_Categories(){

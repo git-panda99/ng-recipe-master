@@ -49,17 +49,17 @@ export class ManageRecipesComponent implements OnInit {
 
       this.recipe = data.map(e => {
         return {
-          id: e.payload.doc.id,
+          id: e.id,
           isEdit: false,
-          title: e.payload.doc.data()['title'],
-          description: e.payload.doc.data()['description'],
-          image: e.payload.doc.data()['image'],
-          ingredients: e.payload.doc.data()['ingredients'],
-          timePrep: e.payload.doc.data()['timePrep'],
-          timeCook: e.payload.doc.data()['timeCook'],
-          dificulty: e.payload.doc.data()['dificulty'],
-          categories: e.payload.doc.data()['categories'],
-          steps: e.payload.doc.data()['steps']
+          title: e.title,
+          description: e.description,
+          image: e.image,
+          ingredients: e.ingredients,
+          timePrep: e.timePrep,
+          timeCook: e.timeCook,
+          dificulty: e.dificulty,
+          categories: e.categories,
+          steps: e.steps
         };
       })
       console.log(this.recipe);
