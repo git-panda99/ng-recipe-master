@@ -9,17 +9,20 @@
     </div>
     <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
       <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-        <li  *ngIf="!isAuth">
+        <li  *ngIf="!this.authGuard.isAuth">
           <a routerLink="/register">Register</a>
         </li>
-        <li  *ngIf="!isAuth">
+        <li  *ngIf="!this.authGuard.isAuth">
           <a routerLink="/login">Login</a>
         </li>
-        <li *ngIf="isAuth">
+        <li *ngIf="this.authGuard.isAuth">
           <a routerLink="/recipes">Recipes</a>
         </li>
-        <li *ngIf="isAuth">
-          <a style="cursor: pointer" (click)="onLogout()">Logout</a>
+        <li *ngIf="this.authGuard.isAuth">
+          <a routerLink="/dashboard">Profile</a>
+        </li>
+        <li *ngIf="this.authGuard.isAuth">
+          <a style="cursor: pointer" (click)="authService.SignOut()">Logout</a>
         </li>
       </ul>
     </div>
