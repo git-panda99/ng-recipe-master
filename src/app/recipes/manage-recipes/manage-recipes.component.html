@@ -9,21 +9,24 @@
     <form class="add-form" fxLayout="column" fxFlexFill fxLayout.lt-sm="column" fxLayoutAlign="center center" fxLayoutGap="10px">
   
         <!-- title -->
-        <span fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="15px">
+        
         <mat-form-field fxLayoutAlign="center">
           <input type="text" matInput placeholder="Recipe Title" [(ngModel)]="recipeTitle" name="title" required>
           <!--<mat-error *ngIf="recipeTitle.hasError('required')">Field must not be empty.</mat-error>-->
         </mat-form-field>
   
         <!-- image -->
+        <span fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="15px">
         <mat-form-field>
           <mat-label>Add a image of your recipe</mat-label>
-          <ngx-mat-file-input placeholder="" accept=".png,.jpg" (change)="uploadFile($event)" name="image">
+          <ngx-mat-file-input placeholder="" accept=".png,.jpg" (change)="uploadFile($event)" [disabled]="invalidImage" name="image">
           </ngx-mat-file-input>
           <mat-icon matSuffix>folder</mat-icon>
-          <div>{{ uploadPercent | async }}</div>
-          <img [src]="downloadURL | async" width="100px" height="auto">
         </mat-form-field>
+
+        <div>{{ uploadPercent | async }}</div>
+        <img [src]="downloadURL | async" width="100px" height="auto">
+
         </span>
   
   

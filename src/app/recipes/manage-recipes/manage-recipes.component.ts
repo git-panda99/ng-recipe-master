@@ -19,6 +19,7 @@ export class ManageRecipesComponent implements OnInit {
   uploadPercent: Observable<number>;
   downloadURL: Observable<string>;
   recipeTitlePlaceholder: string;
+  invalidImage = false;
 
   categories: Observable<CategoryIdModule[]>;
 
@@ -143,6 +144,7 @@ export class ManageRecipesComponent implements OnInit {
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, file);
 
+    this.invalidImage = true;
     // observe percentage changes
     this.uploadPercent = task.percentageChanges();
     // get notified when the download URL is available
