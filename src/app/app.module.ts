@@ -12,7 +12,6 @@ import { SignUpComponent } from './auth/components/sign-up/sign-up.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
-import { AddRecipeComponent } from './recipes/add-recipe/add-recipe.component';
 import { AllRecipesComponent } from './recipes/all-recipes/all-recipes.component';
 import { AllRecipesService } from './recipes/all-recipes/all-recipes.service';
 import { RecipeComponent } from './recipes/recipe/recipe.component';
@@ -22,6 +21,9 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { ManageRecipesComponent } from './recipes/manage-recipes/manage-recipes.component';
 import { DashboardComponent } from './auth/components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './auth/components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './auth/components/verify-email/verify-email.component';
@@ -37,9 +39,9 @@ import { VerifyEmailComponent } from './auth/components/verify-email/verify-emai
     SignUpComponent,
     HeaderComponent,
     SidenavListComponent,
-    AddRecipeComponent,
     AllRecipesComponent,
     RecipesComponent,
+    ManageRecipesComponent
     DashboardComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent
@@ -54,7 +56,9 @@ import { VerifyEmailComponent } from './auth/components/verify-email/verify-emai
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
   providers: [AllRecipesService, AuthService],
   bootstrap: [AppComponent]
