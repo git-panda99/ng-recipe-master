@@ -41,7 +41,7 @@ import { VerifyEmailComponent } from './auth/components/verify-email/verify-emai
     SidenavListComponent,
     AllRecipesComponent,
     RecipesComponent,
-    ManageRecipesComponent
+    ManageRecipesComponent,
     DashboardComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent
