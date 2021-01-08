@@ -85,7 +85,9 @@ export class AuthService {
 
   // Sign in with Google
   GoogleAuth() {
-    return this.AuthLogin(new firebase.default.auth.GoogleAuthProvider());
+    return this.AuthLogin(new firebase.default.auth.GoogleAuthProvider()).then(() => {
+      this.router.navigate(['dashboard']);
+    })
   }
 
   // Auth logic to run auth providers
