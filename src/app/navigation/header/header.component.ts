@@ -8,10 +8,8 @@ import { AuthService } from 'src/app/auth/shared/services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit{
   @Output() sidenavToggle = new EventEmitter<void>();
-  isAuth = false;
-  authSubscription: Subscription;
 
   constructor(private authService: AuthService, public authGuard: AuthGuard) { }
 
@@ -24,11 +22,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   onLogout() {
     this.authService.SignOut();
-    this.isAuth = false;
-  }
-
-  ngOnDestroy() {
-    this.authSubscription.unsubscribe();
   }
 
 }

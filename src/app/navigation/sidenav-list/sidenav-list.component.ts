@@ -8,10 +8,8 @@ import { AuthService } from 'src/app/auth/shared/services/auth.service';
   templateUrl: './sidenav-list.component.html',
   styleUrls: ['./sidenav-list.component.css']
 })
-export class SidenavListComponent implements OnInit, OnDestroy {
+export class SidenavListComponent implements OnInit{
   @Output() closeSidenav = new EventEmitter<void>();
-  isAuth = false;
-  authSubscription: Subscription;
 
   constructor(private authService: AuthService, public authGuard: AuthGuard) { }
 
@@ -25,10 +23,6 @@ export class SidenavListComponent implements OnInit, OnDestroy {
   onLogout() {
     this.onClose();
     this.authService.SignOut();
-  }
-
-  ngOnDestroy() {
-    this.authSubscription.unsubscribe();
   }
 
 }

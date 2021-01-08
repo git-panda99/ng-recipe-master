@@ -12,12 +12,13 @@ import { RecipesComponent } from "./recipes/recipes.component";
 
 const routes: Routes = [
     { path: '', component: HomeComponent},
-    { path: 'register', component: SignUpComponent },
-    { path: 'login', component: SignInComponent },
+    { path: 'register', component: SignUpComponent},
+    { path: 'login', component: SignInComponent},
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
     { path: 'forgot-password', component: ForgotPasswordComponent },
     { path: 'verify-email-address', component: VerifyEmailComponent },
-    { path: 'recipes', component: RecipesComponent, canActivate: [AuthGuard] }
+    { path: 'recipes', component: RecipesComponent, canActivate: [AuthGuard] },
+    { path: '**', component: HomeComponent},
 ];
 
 @NgModule({

@@ -85,9 +85,7 @@ export class AuthService {
 
   // Sign in with Google
   GoogleAuth() {
-    return this.AuthLogin(new firebase.default.auth.GoogleAuthProvider()).then(() => {
-      this.router.navigate(['dashboard']);
-    })
+    return this.AuthLogin(new firebase.default.auth.GoogleAuthProvider());
   }
 
   // Auth logic to run auth providers
@@ -124,6 +122,7 @@ export class AuthService {
   SignOut() {
     return firebase.default.auth().signOut().then(() => {
       localStorage.removeItem('user');
+      window.location.reload();
       this.router.navigate(['login']);
     })
   }
