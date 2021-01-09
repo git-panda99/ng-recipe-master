@@ -1,0 +1,61 @@
+<!--<h1 fxLayoutAlign="center center">Categories:</h1>
+
+<form (ngSubmit)="onAddCategory(f)" #f="ngForm" fxLayoutAlign="center center">
+    <input type="text" mat ngModel name="categoryName" required>
+    <button mat-raised-button color="primary" type="submit">Add category</button>
+</form>
+
+<div class="all-recipes" fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
+    <div  *ngFor="let cat of categories">
+        <span fxLayout="row" fxFlexFill fxLayoutGap="15px">
+        <h1>{{cat.name}}</h1> <mat-icon aria-hidden="false" aria-label="Delete icon">delete</mat-icon>
+        </span>
+    </div>-->
+    <!--(recipeClicked)="onRemoveRecipe(recipeItem)"-->
+<!--</div>-->
+
+
+<div class="container" style="margin: 0 50px 0 50px">
+
+    <h1 style="margin-top: 25px;">
+      Manage Categories
+    </h1>
+  
+    <mat-card class="row" style="margin-top: 25px;"><mat-card-content>
+      <div class="col-md-3">
+        <input type="text" class="form-control" [(ngModel)]="categoryName" placeholder="Name">
+      </div>
+      <div class="col-md-3">
+        <button type="button" (click)="CreateRecord()" [disabled]="!categoryName" class="btn btn-primary">+
+          Create Category</button>
+      </div>
+    </mat-card-content></mat-card>
+    <div class="row" style="margin-top: 25px;">
+      <div fxLayout="column"  fxLayout.gt-md="row wrap" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
+        <mat-card style="width: 300px;" *ngFor="let item of categories">
+          <mat-card-content  *ngIf="!item.isEdit; else elseBlock">
+            <h5>{{item.name}}</h5>
+            <a href="#" class="card-link" (click)="EditRecord(item)">Edit</a>
+            <a href="#" class="card-link" (click)="RemoveRecord(item.id)">Delete</a>
+          </mat-card-content>
+          <ng-template #elseBlock>
+            <div class="card-body">
+              <h5 class="card-title">Edit</h5>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-12">
+                    <input type="text" class="form-control" [(ngModel)]="item.name" placeholder="Edit Name">
+                  </div>
+                </div>
+              </div>
+  
+              <a href="#" class="card-link" (click)="item.isEdit = false">Cancel</a>
+              <a href="#" class="card-link" (click)="UpdateRecord(item)">Update</a>
+            </div>
+          </ng-template>
+        </mat-card>
+      </div>
+    </div>
+  
+  
+  </div>

@@ -27,6 +27,7 @@ import { ManageRecipesComponent } from './recipes/manage-recipes/manage-recipes.
 import { DashboardComponent } from './auth/components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './auth/components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './auth/components/verify-email/verify-email.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 
 
@@ -44,7 +45,8 @@ import { VerifyEmailComponent } from './auth/components/verify-email/verify-emai
     ManageRecipesComponent,
     DashboardComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
