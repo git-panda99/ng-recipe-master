@@ -5,9 +5,9 @@ import { finalize } from 'rxjs/operators';
 import { Dificulty } from '../includes/dificulty.enum';
 import { RecipeService } from '../includes/recipe.service';
 
-import * as uuid from 'uuid';
 import { CategoryModule } from '../includes/category.module';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/shared/services/auth.service';
 export interface CategoryIdModule extends CategoryModule {id: string};
 
 @Component({
@@ -40,7 +40,8 @@ export class ManageRecipesComponent implements OnInit {
   recipeCategories: Array<string>;
   recipeSteps: string;
 
-  constructor(private recipeService: RecipeService, private storage: AngularFireStorage, private router: Router) { }
+  constructor(private recipeService: RecipeService, private storage: AngularFireStorage,
+              private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.categories = this.recipeService.read_Categories();
@@ -139,7 +140,7 @@ export class ManageRecipesComponent implements OnInit {
 
   uploadFile(event) {
     const file = event.target.files[0];
-    const filePath = '' + 'recipeimages' + '/' + uuid.v4() + file.name;
+    const filePath = '' + 'recipeimages' + '/' + this.authService.userData.uid + file.name;
     this.recipeImage = filePath;
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, file);

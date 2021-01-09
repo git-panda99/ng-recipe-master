@@ -6,6 +6,7 @@ import { SignInComponent } from "./auth/components/sign-in/sign-in.component";
 import { SignUpComponent } from "./auth/components/sign-up/sign-up.component";
 import { VerifyEmailComponent } from "./auth/components/verify-email/verify-email.component";
 import { AuthGuard } from "./auth/shared/guard/auth.guard";
+import { CategoriesComponent } from "./categories/categories.component";
 
 import { HomeComponent } from "./home/home.component";
 import { RecipesComponent } from "./recipes/recipes.component";
@@ -18,6 +19,7 @@ const routes: Routes = [
     { path: 'forgot-password', component: ForgotPasswordComponent },
     { path: 'verify-email-address', component: VerifyEmailComponent },
     { path: 'recipes', component: RecipesComponent, canActivate: [AuthGuard] },
+    { path: 'categories', component: CategoriesComponent, canActivate: [AuthGuard] },
     { path: '**', component: HomeComponent},
 ];
 
