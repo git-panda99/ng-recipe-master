@@ -27,10 +27,7 @@
         <div>{{ uploadPercent | async }} %</div>
         <mat-progress-bar
           class="example-margin"
-          [color]="color"
-          [mode]="mode"
-          [value]="uploadPercent | async"
-          [bufferValue]="bufferValue">
+          [value]="uploadPercent | async">
       </mat-progress-bar>
         <img [src]="downloadURL | async" width="100px" height="auto" style="padding-top: 10px">
 
