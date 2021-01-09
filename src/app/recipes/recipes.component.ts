@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth/shared/services/auth.service';
 
 @Component({
   selector: 'app-recipes',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipesComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
+  }
+  
+  isAdmin(): number{
+    return this.authService.userData.email.localeCompare(new String("paula.ciorba@gmail.com"));
   }
 
 }

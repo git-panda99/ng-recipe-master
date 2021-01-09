@@ -8,7 +8,7 @@
       <app-manage-recipes></app-manage-recipes>
     </mat-tab>
 
-    <mat-tab label="Manage Categories">
+    <mat-tab *ngIf="isAdmin()==0" label="Manage Categories">
       <app-categories></app-categories>
     </mat-tab>
 

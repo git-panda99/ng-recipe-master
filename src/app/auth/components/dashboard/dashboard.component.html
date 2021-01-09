@@ -3,7 +3,7 @@
       <div class="inner-adjust">
 
         <div class="px-logo" fxLayoutAlign="center center" >
-          <img height="200px" style="padding: 10px;" src="https://firebasestorage.googleapis.com/v0/b/recipe-master-panda.appspot.com/o/21286793.jpg?alt=media&token=878b5818-ab6c-4e79-8124-cdabb1518596" alt="cute chef">
+          <img height="200px" style="padding: 10px; border-radius: 50%;" src="https://firebasestorage.googleapis.com/v0/b/recipe-master-panda.appspot.com/o/21286793.jpg?alt=media&token=878b5818-ab6c-4e79-8124-cdabb1518596" alt="cute chef">
         </div>
 
         <div class="pt-3 pb-2 mb-3 border-bottom" fxLayoutAlign="center center">
@@ -13,7 +13,7 @@
         <div class="row" *ngIf="authService.userData as user" fxLayoutAlign="center center">
           <div class="col-md-12">
             <div class="media">
-              <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
+              <img class="align-self-start mr-5 img-thumbnail rounded-circle" width="100" src="{{(user.photoURL) ? user.photoURL : 'https://firebasestorage.googleapis.com/v0/b/recipe-master-panda.appspot.com/o/default-avatar.png?alt=media&token=735244a8-27f1-4b95-8a4e-7317c968bae7'}}"
                 alt="{{user.displayName}}">
               <div class="media-body">
                 <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
