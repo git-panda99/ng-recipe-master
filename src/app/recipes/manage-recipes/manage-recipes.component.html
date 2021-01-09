@@ -16,7 +16,7 @@
         </mat-form-field>
   
         <!-- image -->
-        <span fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="15px">
+        <span fxLayout="column" fxFlexFill fxLayout.gt-md="row wrap" fxLayoutGap="15px">
         <mat-form-field>
           <mat-label>Add a image of your recipe</mat-label>
           <ngx-mat-file-input placeholder="" accept=".png,.jpg" (change)="uploadFile($event)" [disabled]="invalidImage" name="image">
