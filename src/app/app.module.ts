@@ -12,7 +12,7 @@ import { SignUpComponent } from './auth/components/sign-up/sign-up.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
-import { AllRecipesComponent } from './recipes/all-recipes/all-recipes.component';
+import { AllRecipesComponent, MyFilterPipe } from './recipes/all-recipes/all-recipes.component';
 import { AllRecipesService } from './recipes/all-recipes/all-recipes.service';
 import { RecipeComponent } from './recipes/recipe/recipe.component';
 import { RecipesComponent } from './recipes/recipes.component';
@@ -46,6 +46,7 @@ import { CategoriesComponent } from './categories/categories.component';
     DashboardComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
+    MyFilterPipe,
     CategoriesComponent
   ],
   imports: [
