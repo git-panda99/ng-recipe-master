@@ -16,7 +16,7 @@
         </mat-form-field>
   
         <!-- image -->
-        <span fxLayout="column" fxFlexFill fxLayout.gt-md="row wrap" fxLayoutGap="15px">
+        <span fxLayout="column" fxFlexFill fxLayout.gt-md="row wrap" fxLayoutGap="15px" fxLayoutAlign="center">
         <mat-form-field>
           <mat-label>Add a image of your recipe</mat-label>
           <ngx-mat-file-input placeholder="" accept=".png,.jpg" (change)="uploadFile($event)" [disabled]="invalidImage" name="image">
@@ -24,8 +24,12 @@
           <mat-icon matSuffix>folder</mat-icon>
         </mat-form-field>
 
-        <div>{{ uploadPercent | async }}</div>
-        <img [src]="downloadURL | async" width="100px" height="auto">
+        <div>{{ uploadPercent | async }} %</div>
+        <mat-progress-bar
+          class="example-margin"
+          [value]="uploadPercent | async">
+      </mat-progress-bar>
+        <img [src]="downloadURL | async" width="100px" height="auto" style="padding-top: 10px">
 
         </span>
   
