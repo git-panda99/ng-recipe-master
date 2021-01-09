@@ -5,8 +5,16 @@
 <section class="recipe" (click)="onClicked()" fxLayout fxLayoutAlign="center">
     <mat-card fxFlex.xs="100%" fxFlex="400px">
       <mat-card-title fxLayoutAlign="center">{{ recipeItem.title }}</mat-card-title>
-      <mat-card-content fxLayoutAlign="center">
-        <p>The most awesome recipe</p>
+      <mat-card-subtitle fxLayoutAlign="center">Level: {{ (recipeItem.dificulty==0)? "Easy" : (recipeItem.dificulty==1)? "Medium" : "Hard"}}</mat-card-subtitle>
+      <img mat-card-image [src]="imageURL" alt="{{ recipeItem.title }}">
+      <mat-card-content fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <h3>{{ recipeItem.description }}</h3>
+        <div fxLayoutAlign="center center" fxLayoutGap="10px">
+        <p>Time to Prep: {{ recipeItem.timePrep.hours }}:{{ recipeItem.timePrep.minutes }}</p>
+        <p>Time to Cook: {{ recipeItem.timeCook.hours }}:{{ recipeItem.timeCook.minutes }}</p>
+        </div>
+        <h2>Steps: </h2>
+        <p>{{ recipeItem.steps }}</p>
       </mat-card-content>
     </mat-card>
 </section>
